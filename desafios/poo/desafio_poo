@@ -1,1 +1,93 @@
 
+import java.util.ArrayList;
+import java.util.List;
+
+// Classe principal que representa um Bootcamp
+class Bootcamp {
+    private List<Curso> cursosOferecidos;
+    private List<Mentoria> mentoriasOferecidas;
+
+    public Bootcamp() {
+        this.cursosOferecidos = new ArrayList<>();
+        this.mentoriasOferecidas = new ArrayList<>();
+    }
+
+    public void adicionarCurso(Curso curso) {
+        cursosOferecidos.add(curso);
+    }
+
+    public void adicionarMentoria(Mentoria mentoria) {
+        mentoriasOferecidas.add(mentoria);
+    }
+}
+
+// Classe que representa um Curso
+class Curso {
+    private String nome;
+    private String descricao;
+    private int duracaoHoras;
+
+    public Curso(String nome, String descricao, int duracaoHoras) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.duracaoHoras = duracaoHoras;
+    }
+
+    // Getters e setters
+}
+
+// Classe que representa uma Mentoria
+class Mentoria {
+    private String nomeMentor;
+    private String areaAtuacao;
+    private int duracaoSessao;
+
+    public Mentoria(String nomeMentor, String areaAtuacao, int duracaoSessao) {
+        this.nomeMentor = nomeMentor;
+        this.areaAtuacao = areaAtuacao;
+        this.duracaoSessao = duracaoSessao;
+    }
+
+    // Getters e setters
+}
+
+// Classe que representa um Desenvolvedor
+class Dev {
+    private String nome;
+    private String areaInteresse;
+
+    public Dev(String nome, String areaInteresse) {
+        this.nome = nome;
+        this.areaInteresse = areaInteresse;
+    }
+
+    // Getters e setters
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando um bootcamp
+        Bootcamp bootcamp = new Bootcamp();
+
+        // Criando cursos
+        Curso cursoJava = new Curso("Java", "Curso de programação em Java", 40);
+        Curso cursoPython = new Curso("Python", "Curso de programação em Python", 30);
+
+        // Criando mentorias
+        Mentoria mentoriaJava = new Mentoria("Mentor Java", "Desenvolvimento Java", 1);
+        Mentoria mentoriaCarreira = new Mentoria("Mentor Carreira", "Desenvolvimento de carreira", 1);
+
+        // Adicionando cursos e mentorias ao bootcamp
+        bootcamp.adicionarCurso(cursoJava);
+        bootcamp.adicionarCurso(cursoPython);
+        bootcamp.adicionarMentoria(mentoriaJava);
+        bootcamp.adicionarMentoria(mentoriaCarreira);
+
+        // Criando desenvolvedores
+        Dev dev1 = new Dev("João", "Desenvolvimento Web");
+        Dev dev2 = new Dev("Maria", "Data Science");
+
+        // Exemplo de relacionamento entre dev e bootcamp (poderia ser mais complexo)
+        List<Dev> participantes = new ArrayList<>();
+        participantes.add(dev1);
+        participantes.add
